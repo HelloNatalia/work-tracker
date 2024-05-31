@@ -14,12 +14,11 @@ class MessageController extends Controller
 
         return view('messages.index');
     }
-    public function create()
+    public function create($receiver_id = null, $subject = null)
 {
     $users = User::all(); // Pobieramy wszystkich użytkowników oprócz administratorów
     $admins = User::whereIn('role', [2, 3])->get(); // Pobieramy wszystkich administratorów
-    return view('messages.create', ['admins' => $admins,'users' => $users]);
-    
+    return view('messages.create', ['admins' => $admins, 'users' => $users, 'receiver_id' => $receiver_id, 'subject' => $subject]);
 }
     // Utworzenie nowej wiadomości
     public function store(Request $request)
@@ -57,6 +56,6 @@ class MessageController extends Controller
     {
         $user_id = Auth::id();
         $received_messages = Message::where('id_user_receiver', $user_id)->get();
-        return response()->json(['received_messages' => $received_messages], 200);
+        return view('messages.receivedMessages', ['received_messages' => $received_messages]);
     }
 }

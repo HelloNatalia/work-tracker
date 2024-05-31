@@ -30,10 +30,10 @@ Route::middleware([CheckAcceptedMiddleware::class])->group(function () {
     Route::get('/vacation-request/{id}', [VacationController::class, 'show'])->name('vacations.show');
     Route::get('/create', [VacationController::class, 'create'])->name('vacations.create');
     Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
-    Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
+    Route::get('/messages/create/{subject?}', [MessageController::class, 'create'])->name('messages.create');
     Route::post('/messages/store',[MessageController::class,'store'])->name('messages.store');
     Route::get('/messages/sent', [MessageController::class, 'sentMessages'])->name('messages.sentMessages');
-    Route::get('/messages/received', [MessageController::class, 'receivedMessages'])->name('messages.recievedMessages');
+    Route::get('/messages/received', [MessageController::class, 'receivedMessages'])->name('messages.receivedMessages');
 });
 
 Route::middleware([CheckAdministrationMiddleware::class])->group(function () {
@@ -53,11 +53,6 @@ Route::middleware([CheckAdministrationMiddleware::class])->group(function () {
     Route::post('/workdays/update', [WorkdayController::class, 'update'])->name('workdays.update');
     Route::get('/admin/vacation-requests', [VacationController::class, 'adminIndex'])->name('vacations.adminIndex');
     Route::post('/admin/vacation-request/{id}/change-status', [VacationController::class, 'changeStatus'])->name('vacations.changeStatus');
-    Route::get('/messages', [MessageController::class, 'index'])->name('messages.index');
-    Route::get('/messages/create', [MessageController::class, 'create'])->name('messages.create');
-    Route::post('/messages/store',[MessageController::class,'store'])->name('messages.store');
-    Route::get('/messages/sent', [MessageController::class, 'sentMessages'])->name('messages.sentMessages');
-    Route::get('/messages/received', [MessageController::class, 'receivedMessages'])->name('messages.recievedMessages');
 });
 
 Route::middleware([CheckAdminMiddleware::class])->group(function () {
