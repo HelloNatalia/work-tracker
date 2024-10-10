@@ -274,14 +274,7 @@ CREATE TABLE `users` (
   `account_number` varchar(26) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `users`
---
 
-INSERT INTO `users` (`id`, `login`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `accepted`, `role`, `first_name`, `second_name`, `last_name`, `birth_date`, `phone`, `address`, `account_number`) VALUES
-(8, 'natalia_tucka', 'natalia@wp.pl', NULL, '$2y$12$TtCOQXVV8WJLOdYbzZtQ8.7n8qbuYBSIpVZmAcAmBiKCZOZjwNksS', NULL, '2024-04-20 08:45:14', '2024-04-20 10:07:09', 1, 3, 'Natalia', 'Monika', 'Tucka', '2001-05-04', '514144551', 'Xawerego Dunikowskiego 20/1501', '12345678974185296312365478'),
-(12, 'normalny', 'normalny@wp.pl', NULL, '$2y$12$GL115fqgI3NAJFBqkESJJe214Iavi3UtWSUflShubCi.1eZrUCOkq', NULL, '2024-04-20 16:12:06', '2024-04-20 16:12:25', 1, 1, 'Normalny', NULL, 'Normaliński', '2024-04-20', '147258369', 'Adres 10/3', '12345678912345678912345678'),
-(13, 'Artem4', 'artyomlox2004@gmail.com', NULL, '$2y$12$VF.49OgzG9B8ndT01XJ46eCKCFnnPN0/DWAAy4n/Ig/7ZGaUdW0Aq', NULL, '2024-05-02 13:36:54', '2024-05-12 17:40:41', 1, 1, 'Artsem', 'Sokal', 'Xd', '2004-04-02', '0238183', 'Микрорайон 1, дом 15, 15', '10');
 
 -- --------------------------------------------------------
 
